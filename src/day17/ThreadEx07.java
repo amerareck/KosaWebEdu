@@ -10,6 +10,7 @@ class ThreadEx07 {
 		String input = JOptionPane.showInputDialog("아무 값이나 입력하세요. 입력할 때까지 놀고있지는 않을께요..(^^)");
 		System.out.println("입력하신 값은 " + input + "입니다.");
 	}
+	// 변경입니당
 }
 
 class ThreadEx7_1 extends Thread {
