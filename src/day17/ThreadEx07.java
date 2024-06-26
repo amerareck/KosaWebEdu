@@ -11,6 +11,7 @@ class ThreadEx07 {
 		System.out.println("입력하신 값은 " + input + "입니다.");
 	}
 	// 변경입니당
+	// 두번째 변경입니당. 커밋테스트
 }
 
 class ThreadEx7_1 extends Thread {
