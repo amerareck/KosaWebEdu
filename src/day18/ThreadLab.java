@@ -30,7 +30,7 @@ public class ThreadLab {
 
 class print_A_to_L extends Thread {
 	@Override
-	public void run() {
+	public void run() { // 상위 메서드가 throws를 정의하지 않았다면, throws를 재정의 할 수 없다.
 		try {
 			char end = 'L';
 			for (char start='A'; start<=end; start++) {

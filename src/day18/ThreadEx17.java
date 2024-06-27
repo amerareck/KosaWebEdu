@@ -27,7 +27,7 @@ class ShareThread1 extends Thread {
 	}
 
 	public void run() {
-		for (int i = 65; i < 91; i++)
+		for (int i = 65; i < 91; i++) // A-Z
 			buffer.add((char) (i));
 	}
 }
@@ -40,7 +40,7 @@ class ShareThread2 extends Thread {
 	}
 
 	public void run() {
-		for (int i = 97; i < 123; i++)
+		for (int i = 97; i < 123; i++) // a-z
 			buffer.add((char) (i));
 	}
 }
