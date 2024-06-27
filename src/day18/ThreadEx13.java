@@ -8,7 +8,7 @@ public class ThreadEx13 {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 		}
-
+		// 실행 중인 스레드의 일시 중지.
 		thread.interrupt();
 	}
 }

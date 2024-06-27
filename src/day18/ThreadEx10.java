@@ -36,7 +36,7 @@ class StatePrintThread extends Thread {
 
 class TargetThread extends Thread {
 	public void run() {
-		for (long i = 0; i < 1000000000; i++) {
+		for (long i = 0; i < 100000000000000000L; i++) {
 		}
 
 		try {
