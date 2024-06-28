@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
+import day8.Book;
+
 public class AnonyInnerLab {
 
 	public static void main(String[] args) {

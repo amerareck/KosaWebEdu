@@ -1,16 +1,16 @@
 package day8;
 
 
-class Book {
+class BookDep {
 	String title;
 	String author;
 	int price;
 	
-	Book() {
+	BookDep() {
 		this("이것이 자바다", "신용권", 38000);
 	}
 	
-	Book(String title, String author, int price) {
+	BookDep(String title, String author, int price) {
 		this.title = title;
 		this.author = author;
 		this.price = price;
