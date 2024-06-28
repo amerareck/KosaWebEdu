@@ -1,12 +1,82 @@
 <!DOCTYPE html>
+<!-- 도큐먼트 타입을 정의하는 DOCTYPE 태그 -->
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>html 학습</title>
+<!--  -->
 </head>
 <body>
 <h1>HTML의 주요 태그 학습</h1>
 <!-- 주석입니다. -->
 <hr> <!-- 컨텐츠를 분리해주는 태그 hr -->
+<h2>하이퍼링크 생성</h2>
+<!-- 페이지 이동을 해주는 하이퍼링크 태그. a태그를 뜻한다. -->
+<a href="http://www.w3.org">월드 와이드 웹 컨소시엄</a>
+<br> <!-- 개행 태그 -->
+<br>
+<a href="http://www.w3schools.com">HTML, CSS, JavaScript 학습 사이트</a>
+<br>
+<br>
+<a href="http://www.naver.com">네이버</a>
+<br>
+<br>
+<a href="http://www.daum.net">다음</a>
+<br>
+<br>
+<!--이미지를 출력하는 태그<img>. 속성이 여러개 있어서 src에 경로를, width 등에 크기를 설정한다. -->
+<a href="http://java.sun.com"><img src="../images/trans_duke.png" width="100"></a>
+<h2>이미지 출력</h2>
+<figure> <!-- 이미지들을 묶어줌. -->
+	<img src="http://localhost:8088/edu/images/olaf.jpg"/> <!-- URL -->
+	<img src="/edu/images/olaf.jpg" width="100"/> <!-- 절대 uri, 기준이 포트 이후 uri -->
+	<img src="../images/olaf.jpg" width="100" height="300"/> <!-- 상대 uri, 기준이 현재 페이지. -->
+<figcaption>귀여운 올라프</figcaption> <!-- 피겨의 작명 태그 -->
+</figure>
+<h2>순서가 있는 리스트</h2>
+<ol> <!-- 순서가 있는 리스트 -->
+	<li>떡볶이</li> <!-- li태그를 이용해 요소 지정. -->
+	<li>김치찌개</li> <!-- 순서대로 1~n까지 앞에 자동으로 지정되어 출력. -->
+	<li>삼겹살</li>
+	<li>탕수육</li>
+	<li>피자</li>
+</ol>
+<h2>순서가 없는 리스트</h2>
+<ul> <!-- 순서가 없는 리스트(라고 하지만 그냥 디스크로 출력해줌) -->
+	<li>떡볶이</li> <!-- 이번엔 앞에 숫자가 아닌 디스크가 출력된다. -->
+	<li>김치찌개</li>
+	<li>삼겹살</li>
+	<li>탕수육</li>
+	<li>피자</li>
+</ul>
+<h2>테이블</h2>
+<table border="1">
+<!-- 테이블 행row 지정 태그 : tr -->
+<!-- 테이블 제목의 이름 지정. 컬럼으로 지정되지만, 요소가 아닌 제목에 해당된다. : th -->
+<!-- 테이블 열column에 해당하는 태그 : td. -->
+<!-- th와 td의 차이는 th가 제목이므로(헤더) 굵게 출력해준다는 점... 그리고 이게 제목이라고 알려주는 점? -->
+	<tr>
+		<th>기술이름</th> <th>설명</th>
+	</tr> 
+	<tr>
+		<td>HTML</td> <td>웹 페이지의 구조와 내용을 작성</td>
+	</tr>
+	<tr>
+		<td>CSS</td> <td>웹 페이지의 스타일 지정</td>
+	</tr>
+	<tr>
+		<td>JavaScript</td> <td>웹 페이지의 동적인 처리와 기능 구현</td>
+	</tr>
+	<tr>
+		<td>AJAX</td> <td>웹 페이지의 비동기적인 컨텐츠 처리</td>
+	</tr>
+	<tr>
+		<td>JDBC</td> <td>DataBase를 연동하여 처리하는 프로그램 개발 시 사용하는 Java API</td>
+	</tr>
+	<tr>
+		<td> </td> <td> </td>
+	</tr>
+</table>
+
 </body>
 </html>
