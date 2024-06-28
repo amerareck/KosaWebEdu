@@ -19,8 +19,9 @@ public class LambdaTest3 {
 		};
 
 		System.out.println(max2.getMax(100, 300));
-
-		MyNumber max3 = (x, y) -> (x >= y) ? x : y;
+		
+		// 함수형 람다식으로 구현된 부분은 "함수"로 간주되어 class 파일이 생성되지 않음.
+		MyNumber max3 = (x, y) -> x >= y ? x : y;
 
 		System.out.println(max3.getMax(100, 300));		
 	}

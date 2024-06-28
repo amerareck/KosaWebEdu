@@ -2,7 +2,6 @@ package lambdalab;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import day8.Book;
 public class AnnonyInnerLab {
 	public static void main(String[] args) {
@@ -16,7 +15,7 @@ public class AnnonyInnerLab {
 		for (Book el : al) {
 			System.out.println(el.getBookInfo());
 		}
-
+		/*
 		Collections.sort(al, new Comparator<Book>() {
 				@Override
 				public int compare(Book o1, Book o2) {
@@ -24,6 +23,9 @@ public class AnnonyInnerLab {
 				}
 			}
 		);
+		*/
+		
+		Collections.sort(al, (b1, b2) -> b1.getPrice() - b1.getPrice());
 		System.out.println("[소팅 후 ]");
 		for (Book el : al) {
 			System.out.println(el.getBookInfo());

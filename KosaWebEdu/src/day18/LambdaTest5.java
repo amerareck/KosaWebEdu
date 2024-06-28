@@ -7,7 +7,7 @@ interface MyFunctionalInterface1 {
 
 public class LambdaTest5 {
 	public static void main(String[] args) {
-		MyFunctionalInterface1 fi = () -> {
+		MyFunctionalInterface1 fi = () -> { // Java는 수행문이 2개 이상이면 중괄호를 강요한다.
 			String str = "method call1";
 			System.out.println(str);
 		};
@@ -15,5 +15,6 @@ public class LambdaTest5 {
 
 		fi = () -> System.out.println("method call2");		
 		fi.method1();
+		
 	}
 }

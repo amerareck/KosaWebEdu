@@ -21,8 +21,10 @@ public class LambdaTest8 {
 
 		fi = () -> new Date();
 		System.out.println(fi.method4());
-
+		
+		// 단순히 객체만 만들어 줄 것이라면, 그냥 생성자를 리턴하는 "함수"로 만들어서 넣어라.
 		fi =  Date::new;
+		// fi.method4()를 호출하면 Date 객체를 생성해서 넘겨줄 것이다.
 		System.out.println(fi.method4());		
 	}
 }
