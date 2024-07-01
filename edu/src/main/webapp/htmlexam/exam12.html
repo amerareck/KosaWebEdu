@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    	/* 모든 span 태그에 css 스타일 적용 */
+    	/* 이 태그 안에는 css의 주석과 css의 문법이 적용된다.*/
+    	span {
+    		border : 1px solid red ;
+    		font-weight : bold;
+    	}
+    </style>
+</head>
+<body>
+    <h1> &lt;div&gt; 태그와 &lt;span&gt; 태그</h1>
+    <hr>
+    동해물과 <span>백두산</span>이 마르고 닳도록
+    하느님이 보우하사 우리나라 만세
+    무궁화 삼천리 화려강산
+    대한사람 대한으로 길이 보전하세
+    <hr>
+    <!-- 2순위 css 지정. 태그에 style 속성을 지정하면 가장 우선한다. -->
+    <!-- 이런 순위 지정 방법을 inline 형식 지정이라고 한다 -->
+    <div style="color:green;font-weight:bold;">
+	    동해물과 <span>백두산</span>이 마르고 닳도록<br>
+	    하느님이 보우하사 우리나라 만세<br>
+	    무궁화 삼천리 화려강산<br>
+	    대한사람 대한으로 길이 보전하세<br>    
+	    <hr>
+	    <p>동해물과 <span>백두산</span>이 마르고 닳도록</p>
+	    <p>하느님이 보우하사 우리나라 만세</p>
+	    <p>무궁화 삼천리 화려강산</p>
+	    <p>대한사람 대한으로 길이 보전하세</p>
+    </div>
+    <hr>
+    <p>
+    동해물과 <span>백두산</span>이 마르고 닳도록
+    하느님이 보우하사 우리나라 만세
+    </p>
+    <p>무궁화 삼천리 화려강산
+    대한사람 대한으로 길이 보전하세</p>
+    <hr>
+    <p>동해물과 <span>백두산</span>이 마르고 닳도록<br>
+    하느님이 보우하사 우리나라 만세</p>
+    <p>무궁화 삼천리 화려강산<br>
+    대한사람 대한으로 길이 보전하세</p>
+</body>
+</html>
