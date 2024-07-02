@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	h1 {
+		text-shadow: 10px 5px 15px #444242;
+	}
+	#formText {
+		height: 110px;
+		margin-bottom: 40px;
+	}
+	#formText>input {
+		border: 2px;
+		border-style:solid;
+		border-radius: 10px;
+		width: 50%;
+		height: 20%;
+		padding-bottom: 4px;
+	}
+	#formButton>input {
+		border: 2px;
+		border-style:solid;
+		border-radius: 10px;
+		width: 60px;
+		height: 30px;
+	}
+
+	
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>회원 정보를 입력하십시오.</h1><hr>
+	<form method="post" action="...">
+		<div id="formText">
+			<input type="text" placeholder="이름을 입력하세요" required="required"/><br>
+			<input type="text" placeholder="계정을 입력하세요" required="required"/><br>
+			<input type="tel" placeholder="전화번호를 입력하세요" /><br>
+			<input type="password" placeholder="패스워드를 입력하세요" required="required" /><br>
+		</div>
+		<div id="formButton">
+			<input type="submit" value="등록" class="formData"/>
+			<input type="reset" value="재작성" class="formData"/>
+		</div>
+	</form>
+</body>
+</html>

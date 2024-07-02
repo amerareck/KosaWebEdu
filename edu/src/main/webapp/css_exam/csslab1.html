@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+	div#main {
+		width : 80%;
+		height : 60%;
+
+		text-align: center;
+		border: 1px;
+		border-style:solid;
+		border-radius: 15px;
+		/* background-image: linear-gradient(to left, orange, grean, yellow); */
+		background-image : linear-gradient(to left, #ffff00, #32c014, #ffce00);
+		
+		margin-left: auto;
+		margin-right: auto;
+	}
+	div#top {
+		text-align: left;
+	}
+	#top>h1 {
+		padding-left: 5%;
+		padding-top: 20px;
+	}
+	hr {
+		width: 90%;
+	}
+	div#bottom {
+		text-align: left;
+		margin-left: 5%;
+	}
+	.button {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}	
+	
+	
+	
+	
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="main">
+		<div id="top">
+			<h1>성적을 입력하시오.</h1><hr>
+		</div>
+		<div id="bottom">
+			<form method="get" action="...">
+				<label for=name>이름 : </label>
+				<input type="text" id="name" name="name" required="required"/><br>
+				<label for=point>평균 점수 : </label>
+				<input type="number" id="point" name="point" required="required"/><br>
+				<input type="submit" value="전송" class="button"/>
+				<input type="reset" value="재작성"class="button"/>
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>
