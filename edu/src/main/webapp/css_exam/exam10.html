@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        p:nth-child(2) {
+        p:nth-child(2) { /*계층 관계에 놓인 (p태그의) 2번째 타입인 녀석*/
             color : red;
         }
-        p:nth-of-type(2) {
+        p:nth-of-type(2) { /*계층 관계 상관 없이,(p태그)타입의 2번째*/
             color : blue;
         }
-        section > h1 {
+        section > h1 { /*자식 선택자 : 직계 자식 h1인 녀석.*/
             color : green;
         }
-        section h1 {
+        section h1 { /*자손 선택자 : 모든 하위 H1친구들*/
             background-color : pink;
         }
         img {
@@ -25,18 +25,18 @@
     </style>
 </head>
 <body>
-<div>
-<h3>어린 왕자</h3>
-<p>1장 </p>
-<p>2장 </p>
-</div>
-<section>
-    <h1>섹션제목</h1>
-    <article>
-        <h1>아티클제목</h1>
-    </article>
-</section>
-<img src="../images/duke.png">
-<img src="../images/java_duke.gif">
+	<div>
+		<h3>어린 왕자</h3>
+		<p>1장 </p>
+		<p>2장 </p>
+	</div>
+	<section>
+	    <h1>섹션제목</h1>
+	    <article>
+	        <h1>아티클제목</h1>
+	    </article>
+	</section>
+	<img src="../images/duke.png">
+	<img src="../images/java_duke.gif">
 </body>
 </html>

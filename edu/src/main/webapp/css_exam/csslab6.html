@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	header {
+		width : 40%;
+		height : 120px;
+		margin : 10px auto;
+		text-align: center;
+		border-radius: 10px;
+		background-image: linear-gradient(to right, yellow, green);
+	}
+	header>h1 {
+		line-height: 120px;
+		color: white;
+	}
+	span#h1_1 {
+		color: violet;
+	}
+	span#h1_2 {
+		text-shadow: 3px 3px 5px white;
+		color: orange;
+	}
+	hr {
+		height: 5px;
+		background-image:linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+	}
+	main {
+		text-align: center;
+	}
+	main img {
+		border: 2px;
+		border-style: solid;
+		border-color: green;
+		border-radius: 10px;
+		box-shadow: 5px 5px 3px lime;
+		width: 150px;
+		height: 150px;
+		margin: 10px 10px;
+	}
+	main img[src$=jpg]:hover {
+		transform : skewY(20deg);
+		transition : transform 1s;
+	}
+	main img[src$=png]:hover {
+		transform : rotate(-10deg);
+		transition : transform 1s;
+	}
+	main img[src$=gif]:hover {
+		transform : rotate(10deg);
+		transition : transform 1s;
+	}
+	
+</style>
+<meta charset="UTF-8">  
+<title>Insert title here</title>
+</head>
+<body>    
+	<header>  
+		<h1> 
+			<span id="h1_1">과일</span>의 <span id="h1_2">종류</span>
+		</h1>  
+	</header>
+	<hr/>
+	<main>
+		<div id="top">
+			<img src="../images/r1.gif"/>
+			<img src="../images/r2.gif"/>
+			<img src="../images/r3.jpg"/>			
+			<img src="../images/r4.gif"/>			
+			<img src="../images/r5.png"/>			
+		</div>
+		<div id="bottom">
+			<img src="../images/r6.png"/>
+			<img src="../images/r7.png"/>
+			<img src="../images/r8.jpg"/>
+			<img src="../images/r9.jpg"/>
+			<img src="../images/r10.jpg"/>
+		</div>
+	</main>
+</body>
+</html>

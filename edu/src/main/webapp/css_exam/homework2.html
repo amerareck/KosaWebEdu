@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	@font-face {
+	    font-family: 'MaruBuri';
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+	}
+	
+	@font-face {
+	    font-family: 'MaruBuriSemiBold';
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.eot);
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.ttf) format("truetype");
+	}
+	
+	@font-face {
+	    font-family: 'MaruBuriBold';
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.eot);
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.ttf) format("truetype");
+	}
+	
+	@font-face {
+	    font-family: 'MaruBuriLight';
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.eot);
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.ttf) format("truetype");
+	}
+	
+	@font-face {
+	    font-family: 'MaruBuriExtraLight';
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.eot);
+	    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.ttf) format("truetype");
+	}
+	body {
+		margin: 0px;
+	}
+	header {
+		height : 150px;
+		text-align: center;
+		font-family: 'MaruBuriBold';
+		background-image: linear-gradient(to right, yellow, green);
+	}
+	header>h1 {
+		color : white;
+		margin : 0px;
+		line-height : 95px;
+		font-size : 40px;
+		text-shadow: 5px 5px 10px yellow, -5px -5px 10px yellow;
+	}
+	nav {
+		margin-top: 15px;
+	}
+	nav>a {
+		margin : 0px 30px;
+		color : grey;
+		text-shadow: -3px -3px 3px yellow, 3px 3px 3px yellow;
+		text-decoration: none;
+	}
+	nav>a:hover {
+		font-family: 'MaruBuriBold';
+		font-size: 20px;
+	}
+	section {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	section>article {
+		border: 3px;
+		border-radius: 15px;
+		border-style: solid;
+		margin : 20px 10px;
+		color : #ffd000;
+		font-family: 'MaruBuri';
+	}
+	section h2 {
+		margin-left: 20px;
+		margin-bottom: 10px;
+		color : orange;
+		font-family: 'MaruBuriSemiBold';
+	}
+	#intro>ul {
+		color : black;
+		margin-bottom: 15px;
+	}
+	article#famousRest {
+		height: 200px;
+	}
+	#famousRest table {
+		border:3px solid #ffe000d1;
+		border-collapse:collapse;
+		margin-left: 20px;
+		text-align: center;
+	}
+	
+	#famousRest th {
+		color : black;
+		height : 25px;
+		background-color: #ffd00052;
+	}
+	th#name {
+		width: 150px;
+	}
+	th#menu{
+		width: 220px;
+	}
+	#famousRest td {
+		color : black;
+		height : 25px;
+	}
+	#famousRest tr:hover {
+		background-color: #ffd00052;
+	}
+	#famousRest td:hover {
+		color : white;
+	}
+	#place>p {
+		margin : 15px 20px;
+		color : #735124;
+	}
+	#place img {
+		width: 100%;
+		border-radius: 20px;
+	}
+	#place figcaption {
+		color : black;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+	}
+	aside {
+		text-align:center;
+		width: 90%;
+		height: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	aside>iframe {
+		width: 80%;
+		height: 95%;
+	}
+	footer {
+		height: 65px;
+		color:white;
+		line-height: 65px;
+		text-align: center;
+		background-color: orange;
+	}
+</style>
+<meta charset="UTF-8">
+<title>HTML5 학습</title>
+</head> 
+<body>
+	<header>  
+		<h1>HTML5 학습</h1> 
+		<nav>
+			<a href="https://www.gn.go.kr/">강릉시청</a>
+			<a href="https://www.gn.go.kr/tour/index.do">강릉 투어</a>
+			<a href="https://namu.wiki/w/%EA%B0%95%EB%A6%89%EC%8B%9C">강릉시에 대하여...</a>
+		</nav>
+	</header>  
+	<section>
+		<article id="intro">
+			<h2>나의 소개</h2>
+			<ul>
+				<li>이름 : 엄 성현</li>
+				<li>별칭 : Amerareck</li>
+				<li>관심기술 : e-gov Framework</li>
+				<li>취미 : 바둑, 장기, 티츄 등 보드게임</li>
+			</ul>
+		</article>
+		<article id="famousRest">
+			<h2>강릉도 면으로 유명하다! 면 음식점 소개</h2>
+			<table border="1">
+				<tr>
+					<th id="name">상호명</th><th id="menu">주력 메뉴</th>
+				</tr>
+				<tr>
+					<td>강릉교동반점</td><td>짬뽕</td>
+				</tr>
+				<tr>
+					<td>신리면옥</td><td>막국수(물막/비막/회막)</td>
+				</tr>
+				<tr>
+					<td>골목칼국수</td><td>손칼국수(장칼국수)</td>
+				</tr>
+			</table>
+		</article>
+		<article id="place">
+			<h2>자랑하고 싶은 우리 동네의 아름다운 곳</h2>
+			<p>동해안의 주요어항기지, 약 350여척의 어선이 드나들며 난류와 한류가 만나는 동해의 국내 최대 어시장, 항구가 가장 아름다운 곳.</p>
+			<p>동해안에서 어획한 오징어를 비롯한 고등어, 명태, 꽁치, 게 등 각종 신선한 자연수산물과 건어물을 취급하는 상설 전문시장으로, 시중가보다 저렴한 가격에 구입할 수도 있고 동해바다의 느낌이 묻어있는 싱싱한 회를 바로 맛볼 수 있다.</p>
+			
+			<figure>
+				<img src="http://img.jumunjinport.co.kr/about/beach_big.jpg" />
+				<figcaption>해지는 노을에서의 항구(1)</figcaption>
+				<img src="https://i.ibb.co/Lzgbbn9/Kakao-Talk-20240628-172043961.jpg"/>
+				<figcaption>주문진항 전경(2)</figcaption>
+			</figure>
+		</article>
+	</section>
+	<aside>
+		<iframe src="https://www.youtube.com/embed/RI2Da8QRsLg" title="♡주문진항 강릉가면 꼭 가볼 풍물시장!!! 여기가 오징어 젤~~~싸네...." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</aside>
+	<footer>
+		<em>이 문서는 엄 성현에 의해 HTML5 기술을 기반으로 2024년 7월 3일에 작성하였습니다. (ver 1.0)</em>
+	</footer>
+</body>
+</html>

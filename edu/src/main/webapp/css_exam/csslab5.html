@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	header {
+		width : 50%;
+		height : 150px;
+		margin : 20px auto;
+		text-align: center;
+		border-radius: 5px;
+		background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+	}
+	header>h1 {
+		line-height: 150px;
+		color: white;
+	}
+	span#heading {
+		color: blue;
+	}
+	main {
+		text-align: center;
+	}
+	main img {
+		border: 2px;
+		border-style: solid;
+		border-color: pink;
+		box-shadow: 3px 3px 3px pink;
+		height: 200px;
+		margin: 10px 10px;
+	}
+	main img:hover {
+		opacity : 0.3;
+		transition : opacity 1s;
+	}
+	
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>  
+	<header>  
+		<h1> 
+			<span id="heading">날씨</span>의 종류
+		</h1>  
+	</header>
+	<hr/>
+	<main>
+		<div id="top">
+			<img src="../images/sun.png" width="200px"/>
+			<img src="../images/rain.png" width="200px"/>
+			<img src="../images/cloud.png" width="200px"/>			
+		</div>
+		<div id="bottom">
+			<img src="../images/cloud_sun.png" width="200px"/>
+			<img src="../images/snow.png" width="200px"/>
+			<img src="../images/etc.png" width="200px"/>
+		</div>
+	</main>
+</body>
+</html>
