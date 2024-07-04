@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트 실습(3)</h1>
+	<hr>
+	<h2></h2>
+	<script type="text/javascript">
+		document.getElementsByTagName("h1")[0].setAttribute("style", "color : blue");
+		let number = window.prompt("숫자를 입력하세요.");
+		input = "입력된 숫자 : "+number;
+		console.log(input);
+		let str = "";
+		if(number == null || number == "") {
+			str+="비어있는 입력";
+			let body = document.getElementsByTagName("body")[0]; // HTMLCollection에서 첫 번째 요소 선택
+			let heading = document.createElement("h3"); // 새로운 h3 요소 생성
+			heading.textContent = str; // h3 요소의 텍스트 설정
+			body.appendChild(heading); // body에 h3 요소 추가
+			
+		} else if(isNaN(parseInt(number))) {
+			str+= "숫자가 아닌 입력";	
+			let body = document.getElementsByTagName("body")[0];
+			let heading = document.createElement("h3");
+			heading.textContent = str; 
+			body.appendChild(heading);
+		} else {
+			var sum = 0;
+			for(let i=1; i<=number; i++) {
+				sum += i;
+			}
+			let h2 = "1부터 "+number+" 까지의 합은 "+sum+" 입니다.";
+			document.getElementsByTagName("h2")[0].textContent = h2;
+			
+		}
+	</script>
+</body>
+</html>

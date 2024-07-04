@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트로 구현하는 구구단</h1>
+	<hr>
+	<h2></h2>
+	<script type="text/javascript">
+		function getColor() {
+			return Math.floor(Math.random()*255);
+		}
+		function getPixel() {
+			return Math.floor(Math.random()*10)+1;
+		}
+		document.getElementsByTagName("h1")[0].setAttribute("style", "color : rgb("+getColor()+", "+getColor()+", "+getColor()+
+				"); text-shadow : "+getPixel()+"px "+getPixel()+"px "+getPixel()+"px rgb("+getColor()+", "+getColor()+", "+getColor()+")");
+
+		let number = Number(window.prompt("1~9 사이의 값을 입력하세요."));
+		while(number > 9 || number < 1 || isNaN(number)) {
+			number = Number(window.prompt("1~9 사이의 값을 입력하세요."));
+		}
+		
+		let h1 = number+"단 입니다.";
+		let sum = [];
+		for(let i=1; i<=9; i++) {
+			sum.push(number * i);
+		}
+		let body = document.getElementsByTagName("body")[0];
+		let heading = document.createElement("h1");
+		let hr = document.createElement("hr");
+		heading.textContent = h1;
+		body.appendChild(heading);
+		body.appendChild(hr);
+		
+		for(let i=0; i<9; i++) {
+			let str = number+" x "+(i+1)+" = "+sum[i];
+			let p = document.createElement("p");
+			p.textContent = str;
+			body.appendChild(p);
+		}
+	
+		
+		let str = "";
+		if(number == null || number == "") {
+			str+="비어있는 입력"; 
+			let body = document.getElementsByTagName("body")[0];
+			let heading = document.createElement("h3").textContent(str);
+			body.appendChild(heading);
+			
+		} else if(isNaN(number)) {
+			str+= "숫자가 아닌 입력";	
+			let body = document.getElementsByTagName("body")[0];
+			let heading = document.createElement("h3").textContent(str);
+			body.appendChild(heading);
+		}
+	</script>
+</body>
+</html>
