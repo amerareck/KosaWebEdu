@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="util.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript"> 
+		writeColor("자바스크립트 실습(6)","h1", "blue");
+		
+		function getMaxValue(param) {
+			let max = Number.MIN_SAFE_INTEGER;
+			for(let i in param) {
+				if(max < Number(param[i]))
+					max = Number(param[i]);
+			}
+			return max;
+		}
+		function getMinValue(param) {
+			let min = Number.MAX_SAFE_INTEGER;
+			for(let i in param) {
+				if(min > Number(param[i]))
+					min = Number(param[i]);
+			}
+			return min;
+		}
+		function getSum(param) {
+			let sum = 0;
+			for(let i in param) {
+				sum+= param[i];
+			}
+			return sum;
+		}
+		function getCountOddNum(param) {
+			let odd = 0;
+			for(let i in param) {
+				param[i]%2!=0 && odd++;
+			}
+			return odd;
+		}
+		function getCountEvenNum(param) {
+			let even = 0;
+			for(let i in param) {
+				param[i]%2==0 && even++;
+			}
+			return even;
+		}
+		
+		let arr = [10, 5, 7, 21, 4, 8, 18];
+		writeColor(`모든 원소의 합 : ${getSum(arr)}`, "h2", "red");
+		
+		let ul = document.createElement("ul");
+		let body = document.getElementsByTagName("body")[0];
+		body.appendChild(ul);
+		let li1 = document.createElement("li");
+		li1.style.listStyleType = "circle";
+		li1.textContent = `최대값 : ${getMaxValue(arr)}`;
+		ul.appendChild(li1);
+		
+		let li2 = document.createElement("li");
+		li2.style.listStyleType = "circle";
+		li2.textContent = `최소값 : ${getMinValue(arr)}`;
+		ul.appendChild(li2);
+		let li3 = document.createElement("li");
+		li3.style.listStyleType = "circle";
+		li3.textContent = `짝수의 갯수 : ${getCountEvenNum(arr)}`;
+		ul.appendChild(li3);
+		let li4 = document.createElement("li");
+		li4.style.listStyleType = "circle";
+		li4.textContent = `홀수의 갯수 : ${getCountOddNum(arr)}`;
+		ul.appendChild(li4);
+		
+		
+	</script>  
+</body>   
+</html>

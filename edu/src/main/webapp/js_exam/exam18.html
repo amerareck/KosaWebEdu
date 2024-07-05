@@ -10,8 +10,8 @@
 <script>
 function out() {
 	document.write("아규먼트 갯수 : "+arguments.length+"<br>");
-	for(var i=0; i < arguments.length; i++) 
-		console.log(arguments[i]);
+	for(let i of arguments)
+		console.log(i);
 	console.log('-----------------------');
 }
 

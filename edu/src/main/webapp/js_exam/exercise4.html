@@ -15,8 +15,10 @@
 		function getPixel() {
 			return Math.floor(Math.random()*10)+1;
 		}
-		document.getElementsByTagName("h1")[0].setAttribute("style", "color : rgb("+getColor()+", "+getColor()+", "+getColor()+
-				"); text-shadow : "+getPixel()+"px "+getPixel()+"px "+getPixel()+"px rgb("+getColor()+", "+getColor()+", "+getColor()+")");
+		
+		document.getElementsByTagName("h1")[0].setAttribute("style", 
+			`color : rgb(${getColor()}, ${getColor()}, ${getColor()}); 
+			text-shadow: ${getPixel()}px ${getPixel()}px ${getPixel()}px rgb(${getColor()}, ${getColor()}, ${getColor()})`);
 
 		let number = Number(window.prompt("1~9 사이의 값을 입력하세요."));
 		while(number > 9 || number < 1 || isNaN(number)) {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="util.js"></script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript"> 
+		function getKorDay(y, m, d) {
+			let week = ["일","월","화","수","목","금","토"];
+			y = Number(parseInt(y));
+			m = Number(parseInt(m)) % 11 - 1;
+			d = Number(parseInt(d)) % 31;
+			let date = new Date(y,m,d);
+			if(isNaN(y) || isNaN(m) || isNaN(d)) return;
+			return `${y}년 ${m+1}월 ${d}일은 ${week[date.getDay(d)]}요일입니다`;
+		}
+		let year = window.prompt("연도를 입력하세요.");
+		let month = window.prompt("월을 입력하세요.");
+		let day = window.prompt("일을 입력하세요.");
+		
+		if(typeof getKorDay(year, month, day) == "undefined") {
+			writeColor("결과 없음", "h1", "red");
+		} else {
+			writeColor(`${getKorDay(year, month, day)}`, "h1", "blue");
+		}
+	</script>  
+</body>      
+</html>
