@@ -21,9 +21,9 @@ function action(type) {
         	write(a*b, "h2");
     	};
 }
-action("add")(10,20);
-action("sub")(10,20);
-action("" )(10,20);
+action("add")(10,20); // write(a+b, "h2"); 호출
+action("sub")(10,20); // write(a-b, "h2"); 호출
+action("" )(10,20); // write(a*b, "h2"); 호출
 </script>
 </body>
 </html>

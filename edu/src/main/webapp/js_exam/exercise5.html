@@ -20,13 +20,13 @@
 		}
 		
 		for(let i=0; i<5; i++) {
-			let rand = Math.floor(Math.random()*6);
-			if(rand==0) {
-				if(typeof sum() == "undefined") {
-					write("결과값이 없어요!!","h3");
-				}
+			let value = Math.floor(Math.random()*6);
+			value = value==0 ? sum() : sum(value);
+			
+			if(typeof value == "undefined") {
+				write("결과값이 없어요!!","h3");
 			} else {
-				write(`호출 결과값 : ${sum(rand)}`,"h2");
+				write(`호출 결과값 : ${value}`,"h2");
 			}
 		}
 	</script>

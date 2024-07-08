@@ -10,12 +10,12 @@
 	<script type="text/javascript"> 
 		function getKorDay(y, m, d) {
 			let week = ["일","월","화","수","목","금","토"];
-			y = Number(parseInt(y));
-			m = Number(parseInt(m)) % 11 - 1;
-			d = Number(parseInt(d)) % 31;
-			let date = new Date(y,m,d);
+			y = Number(y.replaceAll("[^0-9]", "").length==0 ? "검출" : y);
+			m = Number(m.replaceAll("[^0-9]", "")) == 0 ? "검출" : m % 12;
+			d = Number(d.replaceAll("[^0-9]", "")) == 0 ? "검출" : d % 31 == 0 ? d%31+1 : d%31;
+			let date = new Date(y,m-1,d);
 			if(isNaN(y) || isNaN(m) || isNaN(d)) return;
-			return `${y}년 ${m+1}월 ${d}일은 ${week[date.getDay(d)]}요일입니다`;
+			return `${y}년 ${m}월 ${d}일은 ${week[date.getDay(d)]}요일입니다`;
 		}
 		let year = window.prompt("연도를 입력하세요.");
 		let month = window.prompt("월을 입력하세요.");
@@ -26,6 +26,6 @@
 		} else {
 			writeColor(`${getKorDay(year, month, day)}`, "h1", "blue");
 		}
-	</script>  
-</body>      
+	</script>   
+</body>         
 </html>

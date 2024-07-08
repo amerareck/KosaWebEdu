@@ -5,17 +5,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<script>
-function highOrderFunction(p) {
-	if (typeof p == 'function') {
-		p('ㅋㅋㅋ');		
-	} else {
-		alert(p);
+	<script>
+	function highOrderFunction(p) {
+		if (typeof p == 'function') {
+			p('ㅋㅋㅋ');		
+		} else {
+			alert(p);
+		}
 	}
-}
-highOrderFunction(function (msg) {document.write(msg);});
-highOrderFunction(function (msg) {console.log(msg);});
-highOrderFunction();
-</script>
+	//highOrderFunction(function (msg) {document.write(msg);});
+	highOrderFunction(msg => document.write(msg));
+	highOrderFunction(function (msg) {console.log(msg);});
+	highOrderFunction();
+	</script>
 </body>
 </html>

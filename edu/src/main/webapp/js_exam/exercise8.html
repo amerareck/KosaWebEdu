@@ -15,9 +15,15 @@
 			let sum = 0;
 			for(let i in p) {
 				if(typeof p[i] == "string") {
-					p[i].replaceAll(" ","");
-					p[i].length == 0 ? p[i] = "검출!" : p[i];
+					if (p[i].length == 0) {
+						p[i] = "검출!";
+					} else {
+						p[i].replaceAll("[^0-9]","검출!");
+					}
+				} else if(typeof p[i] != "number") {
+					p[i] = "검출!";
 				}
+				
 				let value = Number(p[i]);
 				if(isNaN(value)) {
 					return "숫자만 전달하세요.";
@@ -32,5 +38,5 @@
 		write(`${calc(10, '가나다', 20)}`,"h3");
 		write(`${calc(1,2,3,4,5)}`,"h3");
 	</script>   
-</body>     
+</body>      
 </html>

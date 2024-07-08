@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>exercise9</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let arr = [];
+		let input = prompt("데이터를 입력하세요.");
+		while (input !== null) {
+			arr.push(input);
+			input = prompt("데이터를 입력하세요.");
+		}
+		
+		let rand = Math.floor(Math.random()*10)+1;
+		let result;
+		
+		switch(rand) {
+			case 1:
+			case 4:
+			case 6:
+				result = apply(arr, printH1);
+				break;
+			case 3:
+			case 5:
+			case 7:
+				result = apply(arr, printH4);
+				break;
+			case 8:
+			case 9:
+				result = apply("ㅋㅋ", printH1);
+				break;
+			default :
+				result = apply(arr);
+		}
+		/*
+		if (rand == 1 || rand == 4 || rand == 6) {
+			result = apply(arr, printH1);
+		} else if (rand == 3 || rand == 5 || rand == 7) {
+			result = apply(arr, printH4);
+		} else if (rand == 8 || rand == 9) {
+			result = apply("ㅋㅋ", printH1);
+		} else {
+			result = apply(arr);
+		}
+		*/
+		
+		result ? alert("처리 성공") : alert("처리 실패");
+		
+		function printH1(content) {
+			document.write("<h1>"+content+"</h1>");
+		}
+		
+		function printH4(content) {
+			document.write("<h4>"+content+"</h4>");
+		}
+		
+		function apply(arr, f) {
+			if(arguments.length == 0 || !Array.isArray(arr) || typeof f != "function") {
+				console.log("아규먼트 오류");
+				return false;
+			}
+			for (let e of arr) {
+				f(e);
+			}
+			return true;
+		}
+	</script>
+</body>  
+</html>

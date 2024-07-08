@@ -8,16 +8,18 @@
 <h2>함수에서 데이터의 타입채크</h2>
 <hr>
 <button>ㅋㅋㅋ</button>
-<button onClick="clickProcess(100);">숫자</button>
+<button onClick="clickProcess(100);">숫자</button> <!-- html은 대소문자 구분 안해서 가능 -->
 <button onCLICK="clickProcess('100');">문자열</button>
 <button onclick="clickProcess(true);">논리값</button>
 <button onclick="clickProcess(function(){ });">함수</button>
 <button onclick="clickProcess([ ]);">배열</button>
 <button onclick="clickProcess({ });">객체</button>
-<button onclick="clickProcess();">????</button>
+<button onmouseover="clickProcess();">????</button>
 <script>
-function clickProcess(p) {
-	if (typeof p == "number") {
+function clickProcess(p) { 
+	// typeof 연산자는 반환형이 문자열. 참고로 싹다 소문자임.
+	// typeof 연산자를 동치 연산자로 비교하면 타입비교를 해버리니, 등가 연산자(==)를 쓰자.
+	if (typeof p == "number") { 
 		window.alert("숫자 전달!!");
 	} else if (typeof p == "string") {
 		alert("문자열 전달!!");

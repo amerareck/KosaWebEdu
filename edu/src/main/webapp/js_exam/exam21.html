@@ -11,10 +11,10 @@ function outerFunction() {
         document.write('<H1>Hello World .. !</h1>');
     };
 }
-outerFunction( )( );
-var result = outerFunction( );
-result( );
-result( );
+outerFunction()(); // 앞의 소괄호는 outerFunction을 호출, 뒤의 매개변수는 리턴 함수를 호출하는 것.
+var result = outerFunction();
+result();
+result();
 </script>
 </body>
 </html>
