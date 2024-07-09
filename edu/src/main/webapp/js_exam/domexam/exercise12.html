@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let num = Math.floor(Math.random()*3)+1;
+		let url;
+		if(num==1) {
+			url = "http://www.daum.net/";
+		} else if(num==2) {
+			url = "http://www.naver.com/";
+		} else {
+			url = "http://www.google.com/";
+		}
+		
+		window.confirm("정말 이동할래?") ? location.href = url : location.href = "../../first.html";
+	</script>
+</body>
+</html>

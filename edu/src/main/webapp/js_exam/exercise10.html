@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let red = {tag : "h1", color : "red", msg : "빨강 입니다."};
+		let blue = {tag : "h2", color : "blue", msg : "파랑 입니다."};
+		let green = {tag : "h3", color : "green", msg : "녹색 입니다."};
+		let yellow = {tag : "h4", color : "yellow", msg : "노랑 입니다."};
+		let pink = {tag : "h5", color : "pink", msg : "분홍 입니다."};
+		let arr = [red, blue, green, yellow, pink];
+		
+		for(let i of arr) {
+			printObject(i);
+		}
+		
+		function printObject(p) {
+			if(typeof p != "object") return;
+			document.write(`<${p.tag} style="color : ${p.color}">${p.msg}</${this.tag}>`);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	const child = window.open('/edu/first.html', '', 'width=300, height=200');
+	const width = screen.width; // 화면 width 추출
+	const height = screen.height;
+	child.moveTo(0, 0); // 윈도우 창을 이동시키는 메서든가 보군... 매개변수의 값으로...
+	child.resizeTo(width, height); // resizeTo 사이즈를 매개변수 값으로 변경...  
+	window.setInterval(function () { // 인터벌(2번째 매개변수 동안~)동안 무언가를 set 하는 군.
+    	child.resizeBy(-20, -20);
+    	child.moveBy(10, 10);
+	}, 2000);   // clearInterval() 함수 호출을 통해 인터벌 세터를 중단시킬 수 있다.
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+

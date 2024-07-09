@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>5초 후에 MDN 사이트로 이동합니다.</h1>
+<script>
+	window.setTimeout(function() { // 지정한 타임이 지나면, 한번만 실행하는 친구.
+		location.href = "https://developer.mozilla.org/ko/"; // reload() 새로고침
+	}, 5000); // 5초 뒤에 
+</script>
+</body>
+</html>

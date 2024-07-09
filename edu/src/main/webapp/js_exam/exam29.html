@@ -7,7 +7,7 @@
 <body>
 <script src="util.js"></script>
 <script>
-Array.prototype.numSort = function(type) {	
+Array.prototype.numSort = function(type) {
 	for (let e of this)
 		if (typeof e != "number")
 			return false;
@@ -17,8 +17,8 @@ Array.prototype.numSort = function(type) {
 		this.sort(function(a, b) { return b - a; });
 	else
 		return false;
-	return true;		
-}
+	return true;
+};
 
 let a1 = new Array(20, 5, 1, 30, 15);
 console.log(a1.numSort("DESC"));

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function DayInfo(name, year, month, date) {
+			this.name = name;
+			this.year = year;
+			this.month = month;
+			this.date = date;
+		}
+		DayInfo.prototype.getKorDay = function (){
+			let dateObj = new Date(this.year, this.month-1, this.date);
+			let week = ["일","월","화","수","목","금","토"];
+			return `${this.name}님은 ${week[dateObj.getDay()]}요일에 태어났어요.`;
+		}
+		DayInfo.prototype.getTotalDates = function () {
+			let totalDate = new Date() - new Date(this.year, this.month-1, this.date);
+			totalDate = Math.floor(totalDate / (1000 * 60 * 60 * 24));
+			return `${this.name}님은 태어난 지 ${totalDate}일 되었어요.`;
+		}
+		
+		let arr = [
+			new DayInfo("둘리", 1983, 4, 22),
+			new DayInfo("도우너", 1983, 10, 2),
+			new DayInfo("또치", 1987, 5, 10)
+		];
+		
+		let color = ["red","orange","yellow","green","blue","brown","purple"];
+		for(let e of arr) {
+			var rand = Math.floor(Math.random()*7);
+			document.write(`<h3 style="color:${color[rand]}">${e.getTotalDates()}</h3>`);
+			document.write(`<h3 style="color:${color[rand]}">${e.getKorDay()}</h3>`);
+		}
+		
+	</script>
+</body>  
+</html>
