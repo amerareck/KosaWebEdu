@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>이벤트 모델-인라인</h1>
+	<hr/>
+	<button id="red">빨강색</button>
+	<button id="blue">파랑색</button> 
+	<button id="yellow">노랑색</button>
+	<hr/>
+	<h3 id="target"></h3>
+	<script type="text/javascript">
+	
+		const target = document.getElementById("target");
+		target.innerHTML = getText();
+		
+		const button = document.getElementsByTagName("button");
+		for(let ele of button) {
+			ele.addEventListener("click", setStyleColor);
+		}
+		
+		function setStyleColor(e) {
+			target.style.color = e.target.id;
+		}
+		function getText() {
+			const date = new Date();
+			return `오늘은 ${date.getMonth()+1}월 ${date.getDate()}일입니다`;
+		}
+	</script>
+</body>  
+</html>

@@ -45,6 +45,7 @@
 	function displayAlert(e) {
 		//window.alert(`${e.target.nodeName} 태그 에서 ${e.type} 이벤트 발생!!`);
 		window.alert(`${e.target.nodeName} 태그 에서 ${e.type} 이벤트 발생!! \n--- ${e.currentTarget.nodeName} 태그가 이벤트 처리 위임 받음.`);
+		e.stopPropagation(); // 버블링 중단.	
 	}
 	window.addEventListener("load", clickHandler);
 </script>

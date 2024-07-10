@@ -13,6 +13,7 @@
 <script>
 	function test1() {
 		alert("인라인이벤트모델 버튼 클릭");
+		document.getElementsByTagName("button")[0].setAttribute("onmouseover", null);
 	}
 	function test2() {
 		alert("고전이벤트모델 버튼 클릭");
