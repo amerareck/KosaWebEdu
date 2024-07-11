@@ -13,6 +13,11 @@
 	<input type="submit" value=" 확인 후 전송">
 </form>
 <script>
+	// submit에 대한 핸들러를 하고 싶으면, input태그에 이벤트를 등록하는 것이 아니라
+	// form 태그에 이벤트를 등록해야 한다.
+	// 교수님 추정, input submit 태그는 form으로 submit을 강제로 쏴주고 form이 서버로 action 하는 것임.
+	// 그러므로 서버에 데이터를 보내려는 행위는 input이 아니라 form이 하는 것임.
+	// input 태그의 사용자 입력 값에 핸들링을 하고 싶으면 value 속성을 찾아야 한다. (나중에 다 알게 되겠지만...)
 	document.querySelector("form").addEventListener("submit", function(e) {
 		const name =  document.querySelector("[type='text']").value;
 		const age =  document.querySelector("[type='number']").value;

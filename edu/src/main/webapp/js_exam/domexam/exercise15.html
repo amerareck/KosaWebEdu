@@ -49,6 +49,7 @@
 	<script type="text/javascript">
 		const heading = document.getElementsByTagName("h1")[0];
 		heading.addEventListener("click", goSite);
+		
 		const button = document.getElementById("button");
 		button.addEventListener("click", createGUGUDAN);
 		
@@ -57,8 +58,10 @@
 		}
 		function createGUGUDAN(e){
 			if(e.target.id=="button") return;
+			
 			const target = document.getElementById("gugudan");
 			target.replaceChildren();
+			
 			let element = document.createElement("p");
 			element.innerHTML = `${e.target.id}단입니다.`;
 			target.appendChild(element);

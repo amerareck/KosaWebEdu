@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css"> 
+	h1 {
+		margin : 10px auto;
+		text-align: center;
+	}
+	div#button {
+		text-align: center;
+		margin : 30px auto;
+	}
+	div#button>button {
+		margin-right : 30px;
+	}
+	hr {
+		width: 50%;
+	}
+	div#canvas {
+		text-align: center;
+		margin: 0px auto;
+	}
+	canvas {
+		border-color: black;
+		border-style: solid;
+	}
+</style>
+<title>HTML5 API 실습</title> 
+</head> 
+<body>
+	<h1>성현이의 HTML5 API 실습</h1>
+	<hr/>
+	<div id="button">
+	    <button id="save">저장하기</button>
+	    <button id="initialize">삭제하기</button>
+	    <button id="restore">읽어오기</button> <br>
+	</div>
+	<hr/>
+	<div id="canvas">	
+		<canvas id="draw" width= "800" height= "600"></canvas>
+	</div>
+<script type="text/javascript">
+	const canvas = document.getElementById("draw");
+	const smile = canvas.getContext("2d");
+	document.getElementById("button").addEventListener("click", function(e){
+		if(e.target.id=="button") return;
+		switch(e.target.id) {
+		case "save":
+			window.localStorage.setItem("draw", canvas.toDataURL());
+			break;
+			
+		case "restore":
+			const img = document.createElement("img");
+			img.src = window.localStorage.draw;
+			img.onload = () => smile.drawImage(img, 0, 0);
+			break;
+			
+		case "initialize":
+			smile.clearRect(0, 0, canvas.width, canvas.height);
+			break;
+		}
+	});
+
+	
+	smile.beginPath();
+	smile.fillStyle = "LightGoldenrodYellow";
+	smile.arc(400,300,150,0,Math.PI*2, false);
+	smile.fill();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.fillStyle = "black";
+	smile.lineWidth = 3;
+	smile.arc(400,300,150,0,Math.PI*2, false);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.moveTo(300,250);
+	smile.quadraticCurveTo(325,175, 350,250);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.moveTo(455,250);
+	smile.quadraticCurveTo(480,175, 505,250);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.lineWidth = 4;
+	smile.strokeStyle = "red";
+	smile.arc(400,320,90,0,Math.PI, false);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.moveTo(280,305);
+	smile.quadraticCurveTo(315,355, 315,290);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.moveTo(515,305);
+	smile.quadraticCurveTo(483,348, 480,290);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.arc(400,280,27,0,Math.PI*2, false);
+	smile.fillStyle = "red";
+	smile.fill();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.fillStyle = "white";
+	smile.fillRect(405,265,12,12);
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.strokeStyle = "black";
+	smile.moveTo(400,307);
+	smile.lineTo(400,380);
+	smile.lineWidth = 3;
+	smile.stroke();
+	smile.closePath();
+	
+	smile.beginPath();
+	smile.moveTo(350,155);
+	smile.lineTo(275,230);
+	smile.lineTo(250,105);
+	smile.lineTo(350,155);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.fillStyle = "red";
+	smile.fill();
+	
+	smile.beginPath();
+	smile.moveTo(460,160);
+	smile.lineTo(525,230);
+	smile.lineTo(575,100);
+	smile.lineTo(460,160);
+	smile.stroke();
+	smile.closePath();
+	
+	smile.fillStyle = "red";
+	smile.fill();
+	
+	   
+</script>     
+</body>                 
+</html>  
