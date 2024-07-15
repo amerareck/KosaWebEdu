@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	body{
+		text-align: center;
+	}
+	img {
+		border:1px;
+		border-style:solid;
+		width: 10%;
+		height: 10%;
+		box-shadow: 5px 5px 8px rgba(0,0,0,0.6);
+		
+		margin-right: 20px;
+	}
+	#line1 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	div#bucket {
+		border:3px solid red;
+		border-style:dotted;
+		margin: 50px auto;
+		width:400px;
+		height:300px;
+		border-radius:20px;
+	}
+	ul {
+		text-align: left;
+	}
+	
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>  
+</head>
+<body> 
+	<div id="top"> 
+		<h1>원하는 상품을 드래그하여 장바구니에 넣으세요~~~</h1><hr>
+	</div>
+	<div id="bottom">
+		<div id="line1">
+			<img id="0" class="prod" src="../../images/1.jpg" />
+			<img id="1" class="prod" src="../../images/2.jpg" />
+			<img id="2" class="prod" src="../../images/3.jpg" />
+			<img id="3" class="prod" src="../../images/4.jpg" />
+			<img id="4" class="prod" src="../../images/5.jpg" />					
+		</div>
+		<div id="line2">
+			<img id="5" class="prod" src="../../images/6.jpg" />
+			<img id="6" class="prod" src="../../images/7.jpg" />
+			<img id="7" class="prod" src="../../images/8.jpg" />
+			<img id="8" class="prod" src="../../images/9.jpg" />
+			<img id="9" class="prod" src="../../images/10.jpg" />					
+		</div>
+	</div>
+	<br><hr/>
+	<div id="bucket" draggable="true">
+		<ul>
+		</ul>
+	</div>
+	<script>
+		const imgArr = document.querySelectorAll(".prod");
+		const bucket = document.querySelector("#bucket");
+		const list = bucket.querySelector("ul");
+		const arr = JSON.parse(localStorage.getItem("array"));
+		if(arr === null) {
+			localStorage.array = JSON.stringify([0,0,0,0,0,0,0,0,0,0]);
+		}
+		arr.forEach(function(e, i){
+			if(e==0) return;
+			const target = document.createElement("li");
+			target.innerHTML = (i+1)+"번 상품 "+e+"개";
+			list.appendChild(target);
+		});
+		
+		imgArr.forEach(function(ele) {
+			ele.ondragstart = function(event) {
+		        if (event.target.className == "prod") {
+		        	const id = event.target.id;
+			        event.dataTransfer.setData("text/plain", id);
+			    }
+			}
+			
+		});
+
+		bucket.ondragover = event => event.preventDefault();
+		bucket.ondrop = function (event) {
+			event.preventDefault();
+			list.replaceChildren();
+			let id = event.dataTransfer.getData("text/plain");
+			console.log(id);
+			const array = JSON.parse(localStorage.getItem("array"));
+			array[id]++;
+			array.forEach(function(e, i){
+				if(e==0) return;
+				const target = document.createElement("li");
+				target.innerHTML = (i+1)+"번 상품 "+e+"개";
+				list.appendChild(target);
+			});
+			localStorage.array = JSON.stringify(array);
+		};
+		
+	</script>
+</body>
+</html>
