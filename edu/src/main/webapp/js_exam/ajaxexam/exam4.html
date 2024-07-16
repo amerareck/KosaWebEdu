@@ -12,7 +12,7 @@
       </style>
       <script>
       window.addEventListener("load", function() {
-	     setInterval(function() {
+	     setInterval(function() { // window 객체의 setInterval 함수로 2초마다 ajax로 부름. folling 이라고 한다.
 		    const xhr = new XMLHttpRequest();
 		    xhr.onload = function(event) {
 			   if (xhr.status == 200) {

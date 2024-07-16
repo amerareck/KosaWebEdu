@@ -3,19 +3,19 @@
    <head>
       <meta charset='UTF-8'>
       <title>Ajax테스트</title>   
-      <script>		 
-      window.onload = function () {
-         const xhr = new XMLHttpRequest();
-         xhr.onload = function (event) {
-            const str = xhr.responseText;   
-            const result = JSON.parse(str);     
-            let output = "";
-            for(var i in result)
-                output += `<h3>${result[i]}</h3>`;                         
-            document.body.innerHTML += output;                            
-         };         
-         xhr.open('GET', 'content/sample.json', true);
-         xhr.send();                
+      <script>
+      	window.onload = function () {
+      		const xhr = new XMLHttpRequest();
+      		xhr.onload = function (event) {
+            	const str = xhr.responseText;
+            	const result = JSON.parse(str);
+            	let output = "";
+            	for (var key in result)
+                	output += `<h3>${result[key]}</h3>`;
+            	document.body.innerHTML += output;
+         	};
+         	xhr.open('GET', 'content/sample.json', true);
+         	xhr.send();
       };
       </script>
    </head>

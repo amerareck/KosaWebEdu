@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	div#heading {
+		text-shadow: 3px 5px 8px black;
+		text-align: center;
+	}
+	div#ajax img {
+		margin: 20px auto;
+	}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="heading">
+		<h1>오늘의 날씨 정보</h1>
+	</div>
+	<hr/>
+	<div id="ajax">
+	</div>
+	
+	<script type="text/javascript">
+		window.onload = function() {
+			const ajax = document.getElementById('ajax');
+			const xhr = new XMLHttpRequest();
+			xhr.onload = function(event) {
+				if (xhr.status != 200) return;
+				const data = JSON.parse(xhr.response);
+				appendTag(ajax, 'p', `기준 시간 : ${data.time}`);
+				appendTag(ajax, 'p', `기온 : ${data.temp}`);
+				appendTag(ajax, 'img', `${data.img}`);
+			};
+			xhr.open('GET', 'content/weather.jsp', true);
+			xhr.send();
+		};
+		
+		function appendTag(target, tag, context) {
+			let newTag = document.createElement(tag);
+			if(tag === 'img') {
+				newTag.src = context;
+			} else {
+				newTag.innerHTML = context;
+			}
+			target.appendChild(newTag);
+		}
+		
+	</script>
+</body>
+</html>

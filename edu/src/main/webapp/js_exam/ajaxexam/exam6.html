@@ -7,24 +7,25 @@
 <body>
 <h2 onclick="getImage();">이 행을 클릭해요. Ajax로 이미지를 요청하고 출력해요....</h2>
 <script>
-let imgname = 1;
-function getImage() {
-	imgname = imgname == 10 ? 1 : imgname+1; 
-	const xhr = new XMLHttpRequest();	
-	xhr.responseType = 'blob';
-	xhr.onload = function(e) {
-  		if (this.status == 200) {
-    		const blob = e.target.response
-    		const img = document.createElement('img');
-    		img.width=100;
-    		img.height=100;
-    		img.src = URL.createObjectURL(blob);
-    		document.body.appendChild(img);    
-  		}
-	};
-	xhr.open('GET', `/edu/images/${imgname}.jpg`, true);
-	xhr.send();
-}
+	let imgname = 1;
+	function getImage() {
+		imgname = imgname == 10 ? 1 : imgname+1; 
+		const xhr = new XMLHttpRequest();	
+		xhr.responseType = 'blob'; // (binary_lazy_object)바이너리 형식으로 응답 타입을 받겠다. 이런 뜻인가? 교수님 왈 : 설정 안해도 요즘은 서버나 브라우저에서 알아서 한다.
+		xhr.onload = function(e) {
+	  		if (this.status == 200) {
+	    		const blob = e.target.response // == xhr.response 와 같다.
+	    		const img = document.createElement('img');
+	    		// 태그의 표준 속성은 `.` 연산자를 통해서 접근할 수 있다.
+	    		img.width=100;
+	    		img.height=100;
+	    		img.src = URL.createObjectURL(blob); // blob엔 실제 이미지 바이너리가 담겨있음. 그걸 객체에 대한 URL을 만들어서 그 URL로 넣어주고 있다.
+	    		document.body.appendChild(img);
+	  		}
+		};
+		xhr.open('GET', `/edu/images/${imgname}.jpg`, true);
+		xhr.send();
+	}
 </script>
 </body>
 </html>

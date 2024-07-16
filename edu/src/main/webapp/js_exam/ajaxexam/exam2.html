@@ -7,9 +7,9 @@
       window.onload = function() {
         const xhr = new XMLHttpRequest();
          xhr.onload = function(event) {
-            if (xhr.status == 200) {
+            if (xhr.status == 200) { // response가 성공일 때 처리하겠다.
                const xml = xhr.responseXML;
-	  	       const rootE = xml.getElementsByTagName('testxml');
+	  	       const rootE = xml.getElementsByTagName('testxml'); // 유사 배열(nodeList)로 반환.
 		       let output = '';
 		       for (let i = 1; i < rootE[0].childNodes.length; i += 2)
 		          output += `<h3>${rootE[0].childNodes[i].firstChild.nodeValue}</h3>`;

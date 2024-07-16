@@ -1,9 +1,11 @@
+
 <%@ page contentType="application/json; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml"%>
-<c:catch var="err"> 
+<c:catch var="err">
 	<c:import var="weather"
-		url="http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4413325600">
+		<%-- url="http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1111064000">--%>
+		url="https://www.weather.go.kr/w/rss/dfs/hr1-forecast.do?zone=1111064000">
 	</c:import>
 	<x:parse varDom="wrss" xml="${weather}"></x:parse>
 
@@ -17,22 +19,22 @@
      "wtext" : "${ wfKor }",
      "img" : <c:choose>
 		<c:when test='${ wfKor == "구름 많음"}'>
-					"images/cloud.png"
+					"../../images/cloud.png"
 				</c:when>
 		<c:when test='${ wfKor == "구름 조금"}'>
-					"images/cloud_sun.png"
+					"../../images/cloud_sun.png"
 				</c:when>
 		<c:when test='${ wfKor == "맑음"}'>
-					"images/sun.png"
+					"../../images/sun.png"
 				</c:when>
 		<c:when test='${ wfKor == "비"}'>
-					"images/rain.png"
+					"../../images/rain.png"
 				</c:when>
 		<c:when test='${ wfKor == "눈"}'>
-					"images/snow.png"
+					"../../images/snow.png"
 				</c:when>
 		<c:otherwise>
-					"images/etc.png"
+					"../../images/cloud.png"
 				</c:otherwise>
 	</c:choose>
   }         
@@ -40,4 +42,3 @@
 <c:if test="${err!=null}">
    ${err}
 </c:if>
-

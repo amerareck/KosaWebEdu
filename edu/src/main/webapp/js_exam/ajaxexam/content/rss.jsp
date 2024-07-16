@@ -1,9 +1,14 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=utf-8" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <c:catch var="err">    
+<%--
   <c:import var="weather"  
  url="http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1168064000">
+  </c:import>
+--%>
+  <c:import var="weather"  
+ url="https://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1111064000">
   </c:import>
   <!-- xml 파싱하기 -->
   <x:parse varDom="wrss" xml="${weather}"></x:parse>

@@ -9,6 +9,6 @@
     	if (inputChar == -1)
     		break;
     	sb.append((char)inputChar);
-    }	
+    }
 	out.print(sb);
 %>
