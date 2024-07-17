@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>이벤트 모델-인라인</h1>
+	<hr/>
+	<button>빨강색</button>
+	<button>파랑색</button> 
+	<button>노랑색</button>
+	<hr/>
+	<h3 id="target"></h3>
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript">
+		const arr = ['red','blue','yellow'];
+		
+		$('#target').html(function(){
+			const date = new Date();
+			return `오늘은 ${date.getMonth()+1}월 ${date.getDate()}일입니다`;
+		});
+		
+		$('button').each(function(index, elem){
+			$(elem).click(function(){
+				$('#target').css('color', arr[index]);
+			});
+		});
+		
+	</script>
+</body>  
+</html>

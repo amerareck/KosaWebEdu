@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+    <style>
+        * {
+            margin:5px; padding:5px;
+            border:3px solid Black;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a').click(function (event) {
+                $(this).css('background-color', 'yellow');                
+                event.stopPropagation();
+                event.preventDefault(); 
+            });
+
+            $('h1').click(function () {
+                $(this).css('background-color', 'Red');
+            });
+        });
+    </script>
+</head>
+<body onclick="alert('ㅋㅋㅋ');">
+    <h1>
+        <a href="http://hanb.co.kr">Hanb Media</a>
+    </h1>
+</body>
+</html>

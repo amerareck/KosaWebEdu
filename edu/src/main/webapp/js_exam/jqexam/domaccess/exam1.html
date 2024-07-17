@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () { // 표준 이벤트 모델.
+            alert('First READY');
+        });
+
+        $(document).ready(function () {
+            alert('Second READY');
+        });
+
+        jQuery(function () { // 요것도 표준 이벤트 모델한 것.
+            alert('Third READY');
+        });   
+        
+        $(function () { // 이게 jQuery를 쓰는 이유다. $는 document가 loading되는 그 dom객체를 jquery 객체로 래핑한 것.
+            alert('Final READY');
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
