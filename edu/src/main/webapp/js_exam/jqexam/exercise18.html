@@ -67,7 +67,6 @@
 		$('#div').on('click', changeImage);
 		function changeImage(e) {
 			const id = $(e.target).attr('id');
-			//console.log(id);
 			if(id=="div") return;
 			$('img').attr('src','../../images/'+id+'.png');
 		}

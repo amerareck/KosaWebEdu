@@ -53,12 +53,11 @@
 		});
 		$('#button').on('click', createGUGUDAN);
 
-		function createGUGUDAN(e){
+		function createGUGUDAN(e) {
 			const id = $(e.target).attr('id');
 			if(id=="button") return;
 			$('#gugudan').empty();
-			let element = $('<p/>').text(`${id}단입니다.`);
-			$('#gugudan').append(element);
+			$('<p/>').text(`${id}단입니다.`).appendTo($('#gugudan'));
 			
 			for(let i=1; i<=9; i++) {
 				$('<p/>').text(`${id} x ${i} = ${id*i}`).appendTo($('#gugudan'));

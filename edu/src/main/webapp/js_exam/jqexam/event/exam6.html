@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>
-	var toggle =true;
-	$(document).ready(function() {
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		var toggle =true;
+		$(document).ready(function() {
 		// 변수를 선언합니다.
-		var canvas = document.getElementById('draw');
-		var context = canvas.getContext('2d');
-
+			var canvas = document.getElementById('draw');
+			var context = canvas.getContext('2d');
+	
 		// 이벤트를 연결합니다.
-		$(canvas).click(function(event) {
+			$(canvas).click(function(event) {
 			// 위치를 얻어냅니다.
-			if (toggle) {				
+			if (toggle) {
 				var position = $(this).offset();
 				var x = event.pageX - position.left;
 				var y = event.pageY - position.top;
@@ -22,7 +22,8 @@
 				context.beginPath();
 				context.moveTo(x, y);
 				toggle = false;
-			} else {				
+				
+			} else {
 				var position = $(this).offset();
 				var x = event.pageX - position.left;
 				var y = event.pageY - position.top;
@@ -34,7 +35,7 @@
 			} 
 		});
 	});
-</script>
+	</script>
 </head>
 <body>
 	<canvas id="draw" width="500" height="300"

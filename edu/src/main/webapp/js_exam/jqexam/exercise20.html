@@ -14,9 +14,9 @@
 </form>
 <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>	
-	$('form').on('submit', function(e){
-		const name = $("[type='text']").val();
-		const age = $("[type='number']").val();
+	$('form').on('submit', function(e) {
+		const name = $('[type="text"]').val();
+		const age = $('[type="number"]').val();
 		const content = `입력한 내용입니다. 이름 : ${name}, 나이 : ${age}\n전송할까요?`;
 		window.confirm(content) || e.preventDefault();
 	});

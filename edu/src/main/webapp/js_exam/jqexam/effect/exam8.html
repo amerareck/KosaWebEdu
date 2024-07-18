@@ -8,8 +8,10 @@
 $(document).ready(function(){
    $( "#clickme" ).click(function(e) {	
 	  $( "#book" ).animate({
-		   width: [ "toggle", "swing" ],
-		   height: [ "toggle", "swing" ]       
+		   /*width: [ "toggle", "swing" ],
+		   height: [ "toggle", "swing" ]  */     
+		   width: [ "toggle", "linear" ],
+		   height: [ "toggle", "linear" ]  
 	  }, 5000);
 	});
 });

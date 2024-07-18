@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+	div#heading {
+		text-shadow: 3px 5px 8px black;
+		text-align: center;
+	}
+	div#ajax img {
+		margin: 20px auto;
+	}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="heading">
+		<h1>오늘의 날씨 정보</h1>
+	</div>
+	<hr/>
+	<div id="ajax">
+	</div>
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			const ajax = $('#ajax');
+			$.ajax({
+				url: 'content/weather.jsp',
+				success: function(data) {
+					appendTag(ajax, 'p', `기준 시간 : ${data.time}`);
+					appendTag(ajax, 'p', `기온 : ${data.temp} 도`);
+					appendTag(ajax, 'img', `${data.img}`); `${data.img}`
+					const h1 = $('h1').text(function(index, text){return text + ' - '});
+					$('<span/>').text(`${data.wtext}`).css('color', '#D6B534').appendTo(h1);
+					startAnime();
+				}
+			});
+		});
+		
+		function appendTag(target, tag, context) {
+			if(tag === 'img') {
+				$('<img/>').attr('src', context).appendTo(target);
+			} else {
+				$(`<${tag}/>)`).text(context).appendTo(target);
+			}
+		}
+		
+		function startAnime() {
+			$('img').click(function() {
+				setInterval(function() {
+					$('img').fadeToggle(3000, 'swing');
+				}, 5000 );
+			});
+			$('img').trigger('click');
+		}
+	</script>
+</body>
+</html>

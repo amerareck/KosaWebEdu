@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>New Web Project</title>
+<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>        
+$(document).ready( function() {
+   $.ajax('content/sample.xml', { // url
+      success :  function(data) { // 응답 완료시 실행할 핸들러. data에는 XML 최상위 document DOM객체가 담겨있다.             
+        $(data).find('testxml').each(function() { //data는 DOM 객체이므로 $객체로 래핑해야 한다.
+          $('body').append("<h1>"+$(this).find('name').text() + '</h1>'); // find() 메서드는 $객체의 자식으로 붙어있는 $객체를 매개변수를 기준으로 찾아서 리턴.
+          $('body').append("<h1>"+$(this).find('age').text() + '</h1>');
+          $('body').append("<h1>"+$(this).find('kind').text() + '</h1>');
+        });
+      }
+    });
+});
+</script>
+</head>
+<body>
+	<h1>jQuery 로 구현하는 AJAX 프로그램  - XML</h1>
+</body>
+</html>
