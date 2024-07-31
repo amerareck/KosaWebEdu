@@ -66,6 +66,7 @@ select initcap(ename) from emp; -- 첫 문자열을 대문자로, 나머지는 소문자로 변환.
 select initcap('aaa bbb ccc') from dual;
 
 select to_char(sysdate, 'ddd') from dual; -- year를 뜻함.
+select to_char(hiredate, 'd') from emp; -- year를 뜻함.
 select to_char(sysdate, 'dd') from dual; -- month를 뜻함.
 select to_char(sysdate, 'd') from dual; -- week를 뜻함.
 
