@@ -52,9 +52,9 @@ public class SelectBookLab {
 	static String getSQL(String input) {
 		switch(input) {
     	case"1":
-    		return "SELECT * FROM book";
+    		return "SELECT title, price, class FROM book";
     	case"2":
-    		return "SELECT * FROM book ORDER BY price DESC";
+    		return "SELECT title, price, class FROM book ORDER BY price DESC";
     	case"3":
     		return "SELECT title, price FROM book WHERE price >= 20000";
     	case"4":

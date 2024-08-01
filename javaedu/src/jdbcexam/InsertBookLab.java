@@ -18,6 +18,7 @@ public class InsertBookLab {
 		String user = "jdbctest";
 	    String passwd = "jdbctest";
 	    Scanner sc = new Scanner(System.in);
+	    int cnt = 0;
 	    
 	    while (true) {
 	    	System.out.print("도서명을 입력하세요 : ");
@@ -49,9 +50,13 @@ public class InsertBookLab {
 				pstmt.setString(3, bookType);
 				pstmt.executeUpdate();
 				
+				cnt++;
 				System.out.println("정보가 입력되었습니다.");
 				System.out.print("계속 입력하겠습니까?(y/n)");
-				if(!sc.nextLine().toLowerCase().equals("y")) break;
+				if (!sc.nextLine().toLowerCase().equals("y")) {
+					System.out.printf("%d개의 데이터 입력 완료!", cnt);
+					break;
+				}
 			} catch(Exception e) {
 				e.getStackTrace();
 			}

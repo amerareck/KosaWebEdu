@@ -17,7 +17,7 @@ public class BlobSave {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("저장할 이미지 파일명을 입력하세요 : ");
 		String fname = scan.nextLine();
-		File file = new File("c:/iotest/"+fname);
+		File file = new File("c:/iotest/images/"+fname);
 		InputStream is = new FileInputStream(file);
 		PreparedStatement pstmt = conn.prepareStatement("INSERT INTO imgtest VALUES (?, ?)");
 		pstmt.setString(1, fname);
@@ -26,7 +26,7 @@ public class BlobSave {
 		System.out.println("저장 성공!!");
 		scan.close();
 		pstmt.close();
-		conn.close();		
+		conn.close();
 	}
 }
 
