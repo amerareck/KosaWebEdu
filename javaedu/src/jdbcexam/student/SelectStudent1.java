@@ -16,7 +16,7 @@ public class SelectStudent1 {
 			ResultSet rs = stmt.executeQuery("select name, score from student");
 			while(rs.next()) {
 				System.out.println(rs.getString(1)+"학생은 "+rs.getInt(2)+"점 입니다.");
-			}	
+			}
 			rs.close();
 		} catch (SQLException se) {
 			System.out.println(se.getMessage());

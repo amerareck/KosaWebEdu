@@ -5,6 +5,7 @@ public class ReplyDTO {
 	private String name;
 	private String content;
 	private int refid;
+	
 	public int getId() {
 		return id;
 	}

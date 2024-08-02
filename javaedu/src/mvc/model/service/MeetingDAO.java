@@ -164,7 +164,7 @@ public class MeetingDAO {
 				s.close();
 			ConnectJdbcTest.close(conn);
 		} catch (SQLException e) {
-			System.err.println("search과정에서 문제 발생" + e);
+			System.err.println("close 과정에서 문제 발생" + e);
 		}
 	}
 

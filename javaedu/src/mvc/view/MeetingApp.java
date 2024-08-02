@@ -50,9 +50,9 @@ public class MeetingApp {
 				System.out.print("읽고자 하는 댓글의 미팅글 번호 : ");
 				int refid = Integer.parseInt(scan.nextLine());
 				con.replyRead(refid);
-			} else {			
+			} else {
 				break;
-			}	
+			}
 			System.out.println("------------------------------------------- ");
 		}
 		scan.close();	
