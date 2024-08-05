@@ -42,7 +42,10 @@ public class CheckEmpLab {
 			
 			System.out.print("계속 검색하시겠습니까... (Y/N)");
 			String check = sc.nextLine().toLowerCase();
-			if(!check.equals("y")) break;
+			if(!check.equals("y")) {
+				sc.close();
+				break;
+			}
 	    }
 	}
 

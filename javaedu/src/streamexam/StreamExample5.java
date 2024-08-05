@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class StreamExample5 {
 	public static void main(String[] args) throws Exception {
-		Path path = Paths.get("src/lambdastream/data.txt");
+		Path path = Paths.get("src/streamexam/data.txt");
 		Stream<String> stream = Files.lines(path, Charset.defaultCharset());
 		stream.forEach(line -> System.out.println(line));
 		stream.close();
